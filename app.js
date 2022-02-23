@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const session = require('express-session')
 
 const blogRouter = require('./routes/blog');
 
@@ -18,6 +19,14 @@ app.use(express.urlencoded({
   extended: false
 }));
 app.use(cookieParser());
+app.use(session({
+  secret: 'flzxsqc56231657',
+  cookie: {
+    // path: '/',
+    // httpOnly: true,
+    maxAge: 24 * 60 * 60 * 1000
+  }
+}))
 // app.use(express.static(path.join(__dirname, 'public')));
 
 // app.use('/', indexRouter);

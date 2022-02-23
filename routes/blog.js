@@ -1,5 +1,17 @@
 var express = require('express');
+
 var router = express.Router();
+const {
+    getList,
+    getDetail,
+    newBLog,
+    updateBLog,
+    delBLog
+} = require('../controller/blog')
+const {
+    SuccessModel,
+    ErrorModel
+} = require('../model/resModel')
 
 /* GET home page. */
 router.get('/list', function (req, res, next) {
