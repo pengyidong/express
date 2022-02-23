@@ -12,7 +12,7 @@ router.get('/list', function (req, res, next) {
 router.get('/detail', function (req, res, next) {
     res.json({
         erron: 0,
-        data: 'OK11'
+        data: 'OK'
     })
 });
 
